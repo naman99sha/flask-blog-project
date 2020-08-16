@@ -27,6 +27,7 @@ class User(db.Model, UserMixin):
     email = db.Column(db.String(64), unique=True, index=True)
     username = db.Column(db.String(64), unique=True, index=True)
     password_hash = db.Column(db.String(128))
+    admin=True
     # This connects BlogPosts to a User Author.
     posts = db.relationship('BlogPost', backref='author', lazy=True)
 
